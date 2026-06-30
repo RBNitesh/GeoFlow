@@ -1,0 +1,101 @@
+/* Modern CSS Reset & Variable Design Tokens */
+:root {
+  color-scheme: dark;
+  --bg-primary: #090d16;
+  --bg-secondary: rgba(15, 23, 42, 0.65);
+  --border-glow: rgba(56, 189, 248, 0.2);
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--bg-primary);
+  color: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styles for Glassmorphic Container Overlays */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism panel cards */
+.sidebar, .metrics-panel, .console-panel, .lru-debugger {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar:hover, .metrics-panel:hover, .console-panel:hover, .lru-debugger:hover {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 8px 36px 0 rgba(56, 189, 248, 0.05);
+}
+
+/* Keyframe animations for pulsing node state highlights */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(234, 179, 8, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+  }
+}
+
+/* Custom form and slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1e293b;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+  transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Button hover glows */
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
